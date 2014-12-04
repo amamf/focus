@@ -2,16 +2,12 @@
 
 /**
  * @ngdoc function
- * @name focusSourceApp.controller:AboutCtrl
+ * @name focusApp.controller:AboutCtrl
  * @description
  * # AboutCtrl
- * Controller of the focusSourceApp
+ * Controller of the focusApp
  */
-angular.module('focusSourceApp')
+angular.module('focusApp')
   .controller('AboutCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+
   });
