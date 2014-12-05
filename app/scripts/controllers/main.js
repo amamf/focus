@@ -2,12 +2,12 @@
 
 /**
  * @ngdoc function
- * @name focusSourceApp.controller:MainCtrl
+ * @name focusApp.controller:MainCtrl
  * @description
  * # MainCtrl
- * Controller of the focusSourceApp
+ * Controller of the focusApp
  */
-angular.module('focusSourceApp')
+angular.module('focusApp')
   .controller('MainCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',

@@ -2,14 +2,14 @@
 
 /**
  * @ngdoc overview
- * @name focusSourceApp
+ * @name focusApp
  * @description
- * # focusSourceApp
+ * # focusApp
  *
  * Main module of the application.
  */
 angular
-  .module('focusSourceApp', [
+  .module('focusApp', [
     'ngAnimate',
     'ngCookies',
     'ngResource',
