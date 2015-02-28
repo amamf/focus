@@ -15,7 +15,8 @@ angular
     'ngResource',
     'ngRoute',
     'ngSanitize',
-    'ngTouch'
+    'ngTouch',
+    'ui.keypress'
   ])
   .config(function ($routeProvider) {
     $routeProvider

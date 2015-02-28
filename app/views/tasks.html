@@ -1,0 +1,6 @@
+<div class="tasks-component" ng-controller="TasksCtrl">
+  <input class="add-task" type="text" ng-model="task" ui-keypress="{ 'enter': 'add(task)' }">
+  <ul class="tasks">
+    <li class="task" ng-repeat="task in tasks" ng-bind="task.title"></li>
+  </ul>
+</div>
