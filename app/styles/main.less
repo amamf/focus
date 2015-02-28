@@ -48,15 +48,23 @@ ul {
 }
 
 .tasks-container {
+  text-align: left;
+
   .add-task {
     font-size: 1.6em;
-    width: 100%;
+    width: 85%;
     box-sizing: border-box;
   }
 
   .tasks {
+    display: flex;
+    flex-flow: column;
     text-align: left;
     margin-top: 20px;
+
+    .fi-list, .fi-thumbnails {
+      font-size: 24px;
+    }
 
     .task {
       padding: 7px;
@@ -65,12 +73,40 @@ ul {
       border-left: 2px solid @bright-green;
       border-radius: 3px;
       transform: translateX(0);
+      transition: all 0.2s;
 //      box-shadow: 2px 2px 2px 0px rgba(164, 234, 79, 0.2);
 
       &:hover {
         transform: translateX(-5px);
-        transition: all 0.2s;
+      }
+
+      .fi-clock {
+        float: right;
+        margin-top: -2px;
+      }
+    }
+
+    &.tiles {
+      flex-flow: row wrap;
+
+      .task {
+        display: block;
+        width: 180px;
+        height: 150px;
+        margin: auto;
+        border-left: none;
+        border-top: 2px solid @bright-green;
+
+        &:hover {
+          margin-left: 0;
+        }
       }
     }
   }
 }
+
+.fi-clock, .fi-list, .fi-thumbnails {
+  font-size: 21px;
+}
+
+

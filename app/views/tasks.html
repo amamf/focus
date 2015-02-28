@@ -1,6 +1,10 @@
 <div class="tasks-component" ng-controller="TasksCtrl">
   <input class="add-task" type="text" ng-model="task" ui-keypress="{ 'enter': 'add(task)' }">
-  <ul class="tasks">
-    <li class="task" ng-repeat="task in tasks" ng-bind="task.title"></li>
+  <i class="fi-list" ng-click="setLayout('list')"></i>
+  <i class="fi-thumbnails" ng-click="setLayout('tiles')"></i>
+  <ul class="tasks {{layout}}">
+    <li class="task" ng-repeat="task in tasks">
+      {{task.title}}<i class="fi-clock"></i>
+    </li>
   </ul>
 </div>

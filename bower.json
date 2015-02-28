@@ -10,7 +10,8 @@
     "angular-sanitize": "^1.3.0",
     "angular-touch": "^1.3.0",
     "normalize.css": "~3.0.2",
-    "angular-ui-utils": "bower-keypress"
+    "angular-ui-utils": "bower-keypress",
+    "foundation-icon-fonts": "*"
   },
   "devDependencies": {
     "angular-mocks": "~1.3.0",

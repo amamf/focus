@@ -9,6 +9,7 @@
  */
 angular.module('focusApp')
   .controller('TasksCtrl', function ($scope) {
+    $scope.layout = 'list';
     $scope.tasks = [];
 
     $scope.add = function (task) {
@@ -16,5 +17,9 @@ angular.module('focusApp')
         title: task
       });
       $scope.task = '';
+    };
+
+    $scope.setLayout = function (layout) {
+      $scope.layout = layout;
     };
   });
