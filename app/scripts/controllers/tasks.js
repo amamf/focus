@@ -19,6 +19,10 @@ angular.module('focusApp')
       $scope.task = '';
     };
 
+    $scope.remove = function(task) {
+      _.remove($scope.tasks, task);
+    };
+
     $scope.setLayout = function (layout) {
       $scope.layout = layout;
     };
