@@ -4,7 +4,10 @@
   <i class="fi-thumbnails" ng-click="setLayout('tiles')"></i>
   <ul class="tasks {{layout}}">
     <li class="task" ng-repeat="task in tasks" ng-swipe-right="remove(task)">
-      {{task.title}}<i class="fi-clock"></i>
+      {{task.title}}
+      <div class="duration">{{task.duration}}m</div>
+      <div class="startAt">{{task.startAt.format('LT')}}</div>
+      <i class="fi-clock"></i>
     </li>
   </ul>
 </div>
