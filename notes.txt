@@ -1,1 +1,2 @@
 use these colors as a main palette: white background, light gray, green, orange
+http://jsfiddle.net/zQ4c4/12/

@@ -8,21 +8,19 @@
  * Controller of the focusApp
  */
 angular.module('focusApp')
-  .controller('TasksCtrl', function ($scope, TaskList) {
-    var taskList = new TaskList();
-
+  .controller('TasksCtrl', function ($scope, tasks) {
     $scope.layout = 'list';
-    $scope.tasks = taskList.tasks;
+    $scope.tasks = tasks.tasks;
 
     $scope.add = function (task) {
-      taskList.add({
+      tasks.add({
         title: task
       });
       $scope.task = '';
     };
 
     $scope.remove = function(task) {
-      _.remove($scope.tasks, task);
+      tasks.remove(task);
     };
 
     $scope.setLayout = function (layout) {
