@@ -27,6 +27,19 @@ module.exports = function (grunt) {
     // Project settings
     yeoman: appConfig,
 
+    babel: {
+      options: {
+        sourceMap: true
+      },
+      dist: {
+        files: [{
+          expand: true,
+          cwd: '<%= yeoman.app %>/scripts',
+          src: ['**/*.js'],
+          dest: '.tmp/scripts/'
+        }]
+      }
+    },
     // Watches files for changes and runs tasks based on the changed files
     watch: {
       bower: {
@@ -35,7 +48,7 @@ module.exports = function (grunt) {
       },
       js: {
         files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
-        tasks: ['newer:jshint:all'],
+        tasks: ['babel', 'newer:jshint:all'],
         options: {
           livereload: '<%= connect.options.livereload %>'
         }
@@ -365,6 +378,7 @@ module.exports = function (grunt) {
       'clean:server',
       'wiredep',
       'concurrent:server',
+      'babel',
       'less',
       'autoprefixer',
       'connect:livereload',
@@ -391,6 +405,7 @@ module.exports = function (grunt) {
     'wiredep',
     'useminPrepare',
     'concurrent:dist',
+    'babel',
     'less',
     'autoprefixer',
     'concat',

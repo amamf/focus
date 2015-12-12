@@ -21,23 +21,13 @@ angular.module('focusApp')
             .outerRadius(radius)
             .innerRadius(radius - 5);
 
-          var svg = container.append('svg')
-            .style('width', width)
-            .style('height', height)
-            .append('g')
-            .attr('transform', 'translate(' + width / 2 + ',' + height / 2 + ')');
+        var svg = container.append('svg')
+          .style('width', width)
+          .style('height', height)
+          .append('g')
+          .attr('transform', `translate(${width/2},${height/2})`);
 
-        function timeToAngle(time) {
-          return 1/2 * (60 * time.hours() + time.minutes());
-        }
-
-        function degreesToRadians(degrees) {
-          return degrees * (Math.PI/180);
-        }
-
-        scope.$watchCollection('tasks', function() {
-          render();
-        });
+        scope.$watchCollection('tasks', () => render());
 
         function render() {
           var task = svg.selectAll('.task').data(scope.tasks);
@@ -56,9 +46,17 @@ angular.module('focusApp')
 
               return arc(wedge);
           })
-          .attr('fill', function(d, index) {return color(index);});
+          .attr('fill', (d, index) => { return color(index); });
 
           task.exit().remove();
+        }
+
+        function timeToAngle(time) {
+          return 1/2 * (60 * time.hours() + time.minutes());
+        }
+
+        function degreesToRadians(degrees) {
+          return degrees * (Math.PI/180);
         }
 
       }

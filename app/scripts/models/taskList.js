@@ -1,16 +1,13 @@
-/* global _ */
-/* global moment */
-/* global angular */
 'use strict';
 
-angular.module('focusApp')
-  .factory('TaskList', function () {
-    var TaskList = function(startAt) {
+angular.module('focusApp').factory('TaskList', function() {
+  class TaskList {
+    constructor(startAt) {
       this.tasks = [];
       this.startAt = startAt || moment().hours(8).minutes(0);
-    };
+    }
 
-    TaskList.prototype.add = function(task) {
+    add(task) {
       if(angular.isUndefined(task.duration)) {
         task.duration = 30;
       }
@@ -18,14 +15,14 @@ angular.module('focusApp')
       task.startAt = this.startAt.clone();
 
       if(this.tasks.length > 0) {
-        var lastTask = _.last(this.tasks);
+        let lastTask = _.last(this.tasks);
         task.startAt = lastTask.startAt.clone().add(task.duration, 'm');
       }
 
       this.tasks.push(task);
-    };
+    }
 
-    TaskList.prototype.remove = function(task) {
+    remove(task) {
       var index = this.tasks.indexOf(task);
 
       for(var i = index + 1; i < this.tasks.length; i++) {
@@ -33,7 +30,8 @@ angular.module('focusApp')
       }
 
       _.remove(this.tasks, task);
-    };
+    }
+  }
 
-    return TaskList;
-  });
+  return TaskList;
+});
