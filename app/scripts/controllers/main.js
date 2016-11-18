@@ -8,6 +8,6 @@
  * Controller of the focusApp
  */
 angular.module('focusApp')
-  .controller('MainCtrl', function ($scope) {
+  .controller('MainCtrl', function () {
 
   });

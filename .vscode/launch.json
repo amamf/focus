@@ -35,6 +35,32 @@
 			// Port to attach to.
 			"port": 5858,
 			"sourceMaps": false
-		}
+		},
+    {
+      "name": "Attach to Process",
+      "type": "node",
+      "request": "attach",
+      "processId": "${command.PickProcess}"
+    },
+    {
+            "name": "iOS - Launch localhost with sourcemaps",
+            "type": "ios",
+            "request": "launch",
+            "port": 9222,
+            "url": "index.html",
+            "webRoot": "${workspaceRoot}/app",
+            "deviceName": "*",
+            "sourceMaps": true
+        },
+        {
+            "name": "iOS - Launch localhost with sourcemaps via Tunnel",
+            "type": "ios",
+            "request": "launch",
+            "port": 9222,
+            "webRoot": "${workspaceRoot}/app",
+            "deviceName": "*",
+            "sourceMaps": true,
+            "tunnelPort": 8080
+        }
 	]
 }
