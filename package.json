@@ -5,10 +5,7 @@
   "scripts": {
     "build": "gulp"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/amamf/focus.git"
-  },
+  "repository": "git+https://github.com/amamf/focus.git",
   "keywords": [
     "focus",
     "work",
@@ -21,5 +18,13 @@
   "bugs": {
     "url": "https://github.com/amamf/focus/issues"
   },
-  "homepage": "https://github.com/amamf/focus#readme"
+  "homepage": "https://github.com/amamf/focus#readme",
+  "devDependencies": {
+    "@types/d3": "^4.4.1",
+    "gulp": "^3.9.1",
+    "rollup": "^0.41.4"
+  },
+  "dependencies": {
+    "d3": "^4.4.4"
+  }
 }
